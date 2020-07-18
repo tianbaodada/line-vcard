@@ -55,6 +55,7 @@ function initializeLiff(myLiffId) {
         .catch((err) => {
             document.getElementById("liffAppContent").classList.add('hidden');
             document.getElementById("liffInitErrorMessage").classList.remove('hidden');
+            console.log(err);
         });
 }
 
@@ -104,12 +105,12 @@ function displayIsInClientInfo() {
 */
 function registerButtonHandlers() {
     // openWindow call
-    document.getElementById('openWindowButton').addEventListener('click', function() {
-        liff.openWindow({
-            url: 'https://line.me',
-            external: true
-        });
-    });
+    // document.getElementById('openWindowButton').addEventListener('click', function() {
+    //     liff.openWindow({
+    //         url: 'https://line.me',
+    //         external: true
+    //     });
+    // });
 
     // closeWindow call
     document.getElementById('closeWindowButton').addEventListener('click', function() {
@@ -321,53 +322,53 @@ function registerButtonHandlers() {
     });
 
     // scanCode call
-    document.getElementById('scanQrCodeButton').addEventListener('click', function() {
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-            liff.scanCode().then(result => {
-                // e.g. result = { value: "Hello LIFF app!" }
-                const stringifiedResult = JSON.stringify(result);
-                document.getElementById('scanQrField').textContent = stringifiedResult;
-                toggleQrCodeReader();
-            }).catch(err => {
-                document.getElementById('scanQrField').textContent = "scanCode failed!";
-            });
-        }
-    });
+    // document.getElementById('scanQrCodeButton').addEventListener('click', function() {
+    //     if (!liff.isInClient()) {
+    //         sendAlertIfNotInClient();
+    //     } else {
+    //         liff.scanCode().then(result => {
+    //             // e.g. result = { value: "Hello LIFF app!" }
+    //             const stringifiedResult = JSON.stringify(result);
+    //             document.getElementById('scanQrField').textContent = stringifiedResult;
+    //             toggleQrCodeReader();
+    //         }).catch(err => {
+    //             document.getElementById('scanQrField').textContent = "scanCode failed!";
+    //         });
+    //     }
+    // });
 
     // get access token
-    document.getElementById('getAccessToken').addEventListener('click', function() {
-        if (!liff.isLoggedIn() && !liff.isInClient()) {
-            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
-        } else {
-            const accessToken = liff.getAccessToken();
-            document.getElementById('accessTokenField').textContent = accessToken;
-            toggleAccessToken();
-        }
-    });
+    // document.getElementById('getAccessToken').addEventListener('click', function() {
+    //     if (!liff.isLoggedIn() && !liff.isInClient()) {
+    //         alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+    //     } else {
+    //         const accessToken = liff.getAccessToken();
+    //         document.getElementById('accessTokenField').textContent = accessToken;
+    //         toggleAccessToken();
+    //     }
+    // });
 
     // get profile call
-    document.getElementById('getProfileButton').addEventListener('click', function() {
-        liff.getProfile().then(function(profile) {
-            document.getElementById('userIdProfileField').textContent = profile.userId;
-            document.getElementById('displayNameField').textContent = profile.displayName;
+    // document.getElementById('getProfileButton').addEventListener('click', function() {
+    //     liff.getProfile().then(function(profile) {
+    //         document.getElementById('userIdProfileField').textContent = profile.userId;
+    //         document.getElementById('displayNameField').textContent = profile.displayName;
 
-            const profilePictureDiv = document.getElementById('profilePictureDiv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = 'Profile Picture';
-            profilePictureDiv.appendChild(img);
+    //         const profilePictureDiv = document.getElementById('profilePictureDiv');
+    //         if (profilePictureDiv.firstElementChild) {
+    //             profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+    //         }
+    //         const img = document.createElement('img');
+    //         img.src = profile.pictureUrl;
+    //         img.alt = 'Profile Picture';
+    //         profilePictureDiv.appendChild(img);
 
-            document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
-        }).catch(function(error) {
-            window.alert('Error getting profile: ' + error);
-        });
-    });
+    //         document.getElementById('statusMessageField').textContent = profile.statusMessage;
+    //         toggleProfileData();
+    //     }).catch(function(error) {
+    //         window.alert('Error getting profile: ' + error);
+    //     });
+    // });
 
     document.getElementById('shareTargetPicker').addEventListener('click', function() {
         if (!liff.isInClient()) {
@@ -376,8 +377,137 @@ function registerButtonHandlers() {
             if (liff.isApiAvailable('shareTargetPicker')) {
                 liff.shareTargetPicker([
                     {
-                        'type': 'text',
-                        'text': 'Hello, World!'
+                        "type": "flex",
+                        "altText": "這是我的名片",
+                        "contents": {
+                            "type": "bubble",
+                            "size": "giga",
+                            "body": {
+                              "type": "box",
+                              "layout": "horizontal",
+                              "contents": [
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "孟天寶",
+                                          "size": "md",
+                                          "align": "center",
+                                          "weight": "bold"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "中區業務主任",
+                                          "size": "xxs",
+                                          "align": "center"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "0929-544-828",
+                                          "size": "xs",
+                                          "align": "center"
+                                        }
+                                      ],
+                                      "paddingBottom": "14px",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "tel:0929-544-828"
+                                      }
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "image",
+                                          "url": "https://i.imgur.com/90nr9Gw.png",
+                                          "size": "md",
+                                          "align": "center",
+                                          "aspectRatio": "21:9"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "義大利馬貝總代理",
+                                          "align": "center",
+                                          "size": "xxs"
+                                        }
+                                      ],
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://www.mapei.com/sg/en/home-page"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "璉紅實業有限公司",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "http://landhome.com.tw/"
+                                      },
+                                      "weight": "bold"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "台北市信義區\n中坡北路15巷11號1F",
+                                      "size": "xs",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://goo.gl/maps/bYPMsBFZbD3Vw4w96"
+                                      },
+                                      "decoration": "underline",
+                                      "wrap": true
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "TEL: 02-8785-8856",
+                                      "size": "xs",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "tel:02-8785-8856"
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "FAX: 02-8785-8860",
+                                      "size": "xs"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "E-mail: lh@landhome.com.tw",
+                                      "size": "xs",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "mailto:lh@landhome.com.tw"
+                                      }
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": "統一編號: 12691134",
+                                      "size": "xs"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
                     }
                 ])
                     .then(
