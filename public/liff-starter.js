@@ -26,6 +26,140 @@ window.onload = function() {
     }
 };
 
+const msg = {
+    "type": "flex",
+    "altText": "這是我的名片",
+    "contents": {
+        "type": "bubble",
+        "size": "giga",
+        "body": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "孟天寶",
+                                    "size": "md",
+                                    "align": "center",
+                                    "weight": "bold"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "中區業務主任",
+                                    "size": "xxs",
+                                    "align": "center"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "0929-544-828",
+                                    "size": "xs",
+                                    "align": "center"
+                                }
+                            ],
+                            "paddingBottom": "14px",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "tel:0929-544-828"
+                            }
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "image",
+                                    "url": "https://i.imgur.com/90nr9Gw.png",
+                                    "size": "md",
+                                    "align": "center",
+                                    "aspectRatio": "21:9"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "義大利馬貝總代理",
+                                    "align": "center",
+                                    "size": "xxs"
+                                }
+                            ],
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "https://www.mapei.com/sg/en/home-page"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "璉紅實業有限公司",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "http://landhome.com.tw/"
+                            },
+                            "weight": "bold"
+                        },
+                        {
+                            "type": "text",
+                            "text": "台北市信義區\n中坡北路15巷11號1F",
+                            "size": "xs",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "https://goo.gl/maps/bYPMsBFZbD3Vw4w96"
+                            },
+                            "decoration": "underline",
+                            "wrap": true
+                        },
+                        {
+                            "type": "text",
+                            "text": "TEL: 02-8785-8856",
+                            "size": "xs",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "tel:02-8785-8856"
+                            }
+                        },
+                        {
+                            "type": "text",
+                            "text": "FAX: 02-8785-8860",
+                            "size": "xs"
+                        },
+                        {
+                            "type": "text",
+                            "text": "E-mail: lh@landhome.com.tw",
+                            "size": "xs",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "mailto:lh@landhome.com.tw"
+                            }
+                        },
+                        {
+                            "type": "text",
+                            "text": "統一編號: 12691134",
+                            "size": "xs"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+
 /**
 * Check if myLiffId is null. If null do not initiate liff.
 * @param {string} myLiffId The LIFF ID of the selected element
@@ -126,194 +260,7 @@ function registerButtonHandlers() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
-            liff.sendMessages([
-                {
-                    "type": "flex",
-                    "altText": "This is a flex message",
-                    "contents": {
-                        "type": "bubble",
-                        "size": "giga",
-                        "body": {
-                            "type": "box",
-                            "layout": "horizontal",
-                            "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                        {
-                                            "type": "image",
-                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                                            "size": "xs",
-                                            "align": "start"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "世界級建築化工材料首選",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "image",
-                                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                                            "align": "start",
-                                            "size": "sm"
-                                        }
-                                    ],
-                                    "width": "125px"
-                                },
-                                {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                        {
-                                            "type": "box",
-                                            "layout": "horizontal",
-                                            "contents": [
-                                                {
-                                                    "type": "box",
-                                                    "layout": "vertical",
-                                                    "contents": [
-                                                        {
-                                                            "type": "box",
-                                                            "layout": "horizontal",
-                                                            "contents": [
-                                                                {
-                                                                    "type": "text",
-                                                                    "text": "孟天寶",
-                                                                    "size": "sm",
-                                                                    "align": "start"
-                                                                },
-                                                                {
-                                                                    "type": "text",
-                                                                    "text": "(詩吟)",
-                                                                    "size": "xxs"
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "type": "text",
-                                                            "text": "中區業務主任",
-                                                            "size": "xs"
-                                                        },
-                                                        {
-                                                            "type": "text",
-                                                            "text": "0929-544-828",
-                                                            "size": "xxs"
-                                                        }
-                                                    ],
-                                                    "offsetTop": "20px"
-                                                },
-                                                {
-                                                    "type": "image",
-                                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
-                                                }
-                                            ],
-                                            "offsetBottom": "3px"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "燁紅實業有限公司"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "璉紅實業有限公司"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "LAND-HOME INTERNATIONAL CO.,LTD.",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "110 台北市信義區中坡北路15巷11號1F",
-                                            "size": "xxs"
-                                        },
-                                        {
-                                            "type": "box",
-                                            "layout": "horizontal",
-                                            "contents": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "TEL: 02-8785-8856",
-                                                    "size": "xxs"
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "text": "FAX: 02-8785-8860",
-                                                    "size": "xxs",
-                                                    "offsetStart": "3px"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "http://www.landhome.com.tw",
-                                            "size": "xs"
-                                        },
-                                        {
-                                            "type": "text",
-                                            "text": "E-mail: lh@landhome.com.tw",
-                                            "size": "xs"
-                                        },
-                                        {
-                                            "type": "box",
-                                            "layout": "horizontal",
-                                            "contents": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "璉紅統編: 12691134",
-                                                    "size": "xxs"
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "text": "燁紅統編: 28711993",
-                                                    "size": "xxs"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "offsetStart": "3px"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]).then(function() {
+            liff.sendMessages([msg]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
@@ -375,141 +322,7 @@ function registerButtonHandlers() {
             sendAlertIfNotInClient();
         } else {
             if (liff.isApiAvailable('shareTargetPicker')) {
-                liff.shareTargetPicker([
-                    {
-                        "type": "flex",
-                        "altText": "這是我的名片",
-                        "contents": {
-                            "type": "bubble",
-                            "size": "giga",
-                            "body": {
-                              "type": "box",
-                              "layout": "horizontal",
-                              "contents": [
-                                {
-                                  "type": "box",
-                                  "layout": "vertical",
-                                  "contents": [
-                                    {
-                                      "type": "box",
-                                      "layout": "vertical",
-                                      "contents": [
-                                        {
-                                          "type": "text",
-                                          "text": "孟天寶",
-                                          "size": "md",
-                                          "align": "center",
-                                          "weight": "bold"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "text": "中區業務主任",
-                                          "size": "xxs",
-                                          "align": "center"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "text": "0929-544-828",
-                                          "size": "xs",
-                                          "align": "center"
-                                        }
-                                      ],
-                                      "paddingBottom": "14px",
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "tel:0929-544-828"
-                                      }
-                                    },
-                                    {
-                                      "type": "box",
-                                      "layout": "vertical",
-                                      "contents": [
-                                        {
-                                          "type": "image",
-                                          "url": "https://i.imgur.com/90nr9Gw.png",
-                                          "size": "md",
-                                          "align": "center",
-                                          "aspectRatio": "21:9"
-                                        },
-                                        {
-                                          "type": "text",
-                                          "text": "義大利馬貝總代理",
-                                          "align": "center",
-                                          "size": "xxs"
-                                        }
-                                      ],
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "https://www.mapei.com/sg/en/home-page"
-                                      }
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "box",
-                                  "layout": "vertical",
-                                  "contents": [
-                                    {
-                                      "type": "text",
-                                      "text": "璉紅實業有限公司",
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "http://landhome.com.tw/"
-                                      },
-                                      "weight": "bold"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "台北市信義區\n中坡北路15巷11號1F",
-                                      "size": "xs",
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "https://goo.gl/maps/bYPMsBFZbD3Vw4w96"
-                                      },
-                                      "decoration": "underline",
-                                      "wrap": true
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "TEL: 02-8785-8856",
-                                      "size": "xs",
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "tel:02-8785-8856"
-                                      }
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "FAX: 02-8785-8860",
-                                      "size": "xs"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "E-mail: lh@landhome.com.tw",
-                                      "size": "xs",
-                                      "action": {
-                                        "type": "uri",
-                                        "label": "action",
-                                        "uri": "mailto:lh@landhome.com.tw"
-                                      }
-                                    },
-                                    {
-                                      "type": "text",
-                                      "text": "統一編號: 12691134",
-                                      "size": "xs"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          }
-                    }
-                ])
+                liff.shareTargetPicker([msg])
                     .then(
                         document.getElementById('shareTargetPickerMessage').textContent = "Share target picker was launched."
                     ).catch(function(res) {
