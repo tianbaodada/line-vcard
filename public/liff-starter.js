@@ -118,7 +118,7 @@ const msg = {
                             "action": {
                                 "type": "uri",
                                 "label": "action",
-                                "uri": "https://goo.gl/maps/bYPMsBFZbD3Vw4w96"
+                                "uri": "https://www.google.com/maps/search/?api=1&query=%E7%92%89%E7%B4%85%E5%AF%A6%E6%A5%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&query_place_id=ChIJDSF-kJ-rQjQRUx-6uKwPUCs"
                             },
                             "decoration": "underline",
                             "wrap": true
